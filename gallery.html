@@ -28,4 +28,87 @@
         <p>&copy; 2025 Eventtechnik. Alle Rechte vorbehalten.</p>
     </footer>
 </body>
+</html><!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventtechnik Galerie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Galerie</h1>
+    
+    <div class="gallery">
+        <input type="file" id="imageUpload" accept="image/*" multiple>
+        <div id="galleryContainer" class="gallery-container">
+            <!-- Bilder werden hier angezeigt -->
+        </div>
+    </div>
+
+    <footer>
+        <a href="impressum.html">Impressum</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventtechnik Galerie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Galerie</h1>
+    
+    <div class="gallery">
+        <input type="file" id="imageUpload" accept="image/*" multiple>
+        <div id="galleryContainer" class="gallery-container">
+            <!-- Bilder werden hier angezeigt -->
+        </div>
+    </div>
+
+    <footer>
+        <a href="impressum.html">Impressum</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.gallery {
+    margin-top: 20px;
+}
+
+#galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-container img {
+    max-width: 200px;
+    max-height: 150px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
+}
+
+
