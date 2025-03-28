@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -18,97 +17,55 @@
             <a href="contact.html">Kontakt</a>
         </nav>
     </header>
+    
     <main>
         <section>
             <h2>Unsere Projekte</h2>
             <p>Bilder und Videos von vergangenen Events folgen bald!</p>
+            
+            <!-- Galerie mit Upload-Funktion -->
+            <div class="gallery">
+                <h3>Bild hochladen</h3>
+                <input type="file" id="imageUpload" accept="image/*" multiple>
+                <div id="galleryContainer" class="gallery-container">
+                    <!-- Bilder werden hier angezeigt -->
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Eventtechnik. Alle Rechte vorbehalten.</p>
-    </footer>
-</body>
-</html><!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventtechnik Galerie</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Galerie</h1>
-    
-    <div class="gallery">
-        <input type="file" id="imageUpload" accept="image/*" multiple>
-        <div id="galleryContainer" class="gallery-container">
-            <!-- Bilder werden hier angezeigt -->
-        </div>
-    </div>
-
-    <footer>
         <a href="impressum.html">Impressum</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Funktion zum Hochladen und Anzeigen von Bildern
+        document.getElementById('imageUpload').addEventListener('change', function(e) {
+            const files = e.target.files; // Holen der hochgeladenen Dateien
+            const galleryContainer = document.getElementById('galleryContainer');
+
+            // Schleife durch alle ausgewählten Dateien
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+
+                // Nur Bilddateien verarbeiten
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+
+                    reader.onload = function(event) {
+                        // Erstellen eines neuen Bildes
+                        const img = document.createElement('img');
+                        img.src = event.target.result; // Bildquelle ist die gelesene Datei
+                        img.alt = file.name; // Setze den Dateinamen als Alt-Text
+                        galleryContainer.appendChild(img); // Füge das Bild der Galerie hinzu
+                    };
+
+                    // Lies die Datei und lade sie als URL
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventtechnik Galerie</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Galerie</h1>
-    
-    <div class="gallery">
-        <input type="file" id="imageUpload" accept="image/*" multiple>
-        <div id="galleryContainer" class="gallery-container">
-            <!-- Bilder werden hier angezeigt -->
-        </div>
-    </div>
-
-    <footer>
-        <a href="impressum.html">Impressum</a>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.gallery {
-    margin-top: 20px;
-}
-
-#galleryContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.gallery-container img {
-    max-width: 200px;
-    max-height: 150px;
-    object-fit: cover;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-}
-
-footer {
-    margin-top: 30px;
-}
-
-footer a {
-    text-decoration: none;
-    color: #333;
-}
-
-
