@@ -1,12 +1,32 @@
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Reset von Margin, Padding und Box-Sizing für alle Elemente */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML und Body auf 100% der Höhe und Breite setzen */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Verhindert Scrollen */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
 }
+
+/* Body bleibt zentriert mit Flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header Styling */
 header {
     background: #333;
     color: #fff;
@@ -16,6 +36,8 @@ header {
 header h1 {
     margin: 0;
 }
+
+/* Navigation Styling */
 nav {
     margin-top: 10px;
 }
@@ -28,10 +50,14 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+
+/* Hauptbereich Styling */
 main {
     padding: 20px;
     text-align: center;
 }
+
+/* Footer Styling */
 footer {
     background: #333;
     color: #fff;
@@ -41,6 +67,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Button Styling */
 button {
     background: #333;
     color: #fff;
@@ -50,4 +78,95 @@ button {
 }
 button:hover {
     background: #555;
+}
+
+/* Galerie-Styling */
+.gallery {
+    width: 100%;
+    height: 100%; /* nimmt die komplette Höhe ein */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-container img {
+    max-width: 100%;
+    max-height: 80vh; /* Maximale Höhe der Bilder auf 80% der Viewport-Höhe setzen */
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Vollbildmodus: Verhindert das Scrollen */
+html, body {
+    height: 100%;
+}
+
+/* Footer am unteren Bildschirmrand fixieren */
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 16px;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Optional: Für Full-Screen-Ansicht */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* Flexbox für Galerie */
+.gallery {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-container img {
+    max-width: 100%;
+    max-height: 80vh; /* Maximale Höhe der Bilder auf 80% der Viewport-Höhe setzen */
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 16px;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
 }
