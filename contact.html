@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Eventtechnik</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Kontakt</h1>
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="about.html">Über uns</a>
+            <a href="services.html">Leistungen</a>
+            <a href="gallery.html">Galerie</a>
+            <a href="contact.html">Kontakt</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Schreiben Sie uns</h2>
+            <form action="contact.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Absenden</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Eventtechnik. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
